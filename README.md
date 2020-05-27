@@ -9,7 +9,11 @@ Your project will include a web app where an emergency worker can input a new me
 Three key component of the project
 
 1. ETL Pipeline
-In a Python script, process_data.py, which include load the datasets, merging, cleaning and save in sql database,
+In a Python script, process_data.py
+* Loads the messages and categories datasets
+* Merges the two datasets
+* Cleans the data
+* Stores it in a SQLite database
 
 2. ML Pipeline
 In a Python Script, train_classifier.py
@@ -21,6 +25,7 @@ In a Python Script, train_classifier.py
 * Exports the final model as a pickle file
 
 3. Flask Web app
+* Web app to show models result in real time
 
 ### Instructions:
 1. Run the following commands in the project's root directory to set up your database and model.
@@ -39,3 +44,7 @@ In a Python Script, train_classifier.py
 5. Now open your browser window and type https://viewa7a4999b-3001.udacity-student-workspaces.com, replace the whole viewa7a4999b with your space id you got in the step 2
 6. Press enter and the app should now run for you
 `http://view6914b2f4-3001.udacity-student-workspaces.com` `http://WORKSPACESPACEID-3001.WORKSPACEDOMAIN` 
+
+### Acknowledgements
+* [Udacity](https://www.udacity.com/) for this nanodegree assignment
+* [Figure Eight](https://www.figure-eight.com/) for providing the datasets for this project
