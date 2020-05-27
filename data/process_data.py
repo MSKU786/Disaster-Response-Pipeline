@@ -4,6 +4,18 @@ import numpy as np
 from sqlalchemy import create_engine
 
 def load_data(messages_filepath, categories_filepath):
+	"""
+	Load dataframe from filepaths and merge them 
+    
+    Args:
+    	messages_filepath is a link to the csv file
+    	categories_filepath is a link to the csv file
+    
+    Returns:
+    	df - pandas DataFrame which merge two dataframes
+
+
+	"""
     #Load Dataset mesages
     messages = pd.read_csv(messages_filepath)
     print(messages.head())
@@ -19,6 +31,18 @@ def load_data(messages_filepath, categories_filepath):
 
 
 def clean_data(df):
+	"""
+	Clean the data remove duplicates and tranform categories part
+    
+    Args:
+    	Dataframe-- df(return by load_data function)
+    
+    Returns:
+    	Cleaned dataframe -- df
+
+
+	"""
+
     # create a dataframe of the 36 individual category columns
     categories = df['categories'].str.split(pat=';', expand=True)
     categories.head()
@@ -52,6 +76,12 @@ def clean_data(df):
 
 
 def save_data(df, database_filename):
+	"""
+	Saves DataFrame (df) to database path and change dataframe to sql table
+
+	"""
+
+
     engine = create_engine('sqlite:///' + database_filename)
     df.to_sql('Disasters', engine, index=False)
  
@@ -59,6 +89,12 @@ def save_data(df, database_filename):
 
 
 def main():
+	"""
+		Runs main function, which call all above function
+		load_data()
+		clean_data()
+		save_data()
+	"""
     if len(sys.argv) == 4:
 
         messages_filepath, categories_filepath, database_filepath = sys.argv[1:]
