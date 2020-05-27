@@ -1,17 +1,25 @@
 # Disaster Response Pipeline Project
 
 ## Table of Contents
-1. [Introduction](#Introduction)
-2. [Project Components](#Project)
-3. [Instruction](#Instruction)
-4. [Acknowledgement](#acknowledgement)
 
-<a name = "Introduction"></a>
-### Introduction:
+1. [Installation](#Install)
+2. [Description](#Description)
+3. [Project Components](#Project)
+4. [Instruction](#Instruction)
+5. [Acknowledgement](#acknowledgement)
+
+
+<a name = "Install"></a>
+### Installation:
+This project used HTML, bootstrap and python, and requires the following Python packages: pandas, numpy, re, pickle, nltk, flask, json, plotly, sklearn, sqlalchemy, sys.
+
+<a name = "Description"></a>
+### Description:
 This project is the part of Udacity nanodegree programm.In the Project, you'll find a data set containing real messages that were sent during disaster events. We are creating a machine learning pipeline to categorize these events so that you can send the messages to an appropriate disaster relief agency.
 
+Your project will include a web app where an emergency worker can input a new message and get classification results in several categories. The web app will also display visualizations of the data. The dataset provided by figure8.
+
 <a name = "Project"></a>
-Your project will include a web app where an emergency worker can input a new message and get classification results in several categories. The web app will also display visualizations of the data. The dataset provided by figure8.<
 ### Project Components:
 Three key component of the project
 
@@ -34,7 +42,7 @@ In a Python Script, train_classifier.py
 3. Flask Web app
 * Web app to show models result in real time
 
-<a name = "Instructions"></a>
+<a name = "Instruction"></a>
 ### Instructions:
 1. Run the following commands in the project's root directory to set up your database and model.
 
@@ -53,7 +61,7 @@ In a Python Script, train_classifier.py
 6. Press enter and the app should now run for you
     `http://view6914b2f4-3001.udacity-student-workspaces.com` `http://WORKSPACESPACEID-3001.WORKSPACEDOMAIN` 
     
-<a name = "Acknowledgements"></a>
+<a name = "acknowledgement"></a>
 ### Acknowledgements
 * [Udacity](https://www.udacity.com/) for this nanodegree assignment
 * [Figure Eight](https://www.figure-eight.com/) for providing the datasets for this project
