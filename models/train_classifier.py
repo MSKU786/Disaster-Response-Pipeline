@@ -18,6 +18,16 @@ from sklearn.tree import DecisionTreeClassifier
 import pickle
 
 def load_data(database_filepath):
+    """ Load the database 
+    Fucntion to load the database from the given filepath and process them as X, Y and category_names.
+    
+
+    Args : 
+        Databased filepath
+
+    Returns: 
+        Returns the Features X & target y along with target columns names catgeory_names
+    """
     databasePath = 'sqlite:///' + database_filepath
     engine = create_engine(databasePath)
     df = pd.read_sql_table("Disasters", con = engine)
@@ -29,6 +39,15 @@ def load_data(database_filepath):
 
 
 def tokenize(text):
+     """ Used to tokenize
+    Fucntion help to tokenize the text messages 
+
+    Args : 
+        Text messages
+
+    Returns: 
+        A list of clean tokenized text
+    """
     url_regex = 'http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+'
     urls = re.findall(url_regex, text)
     for url in urls:
@@ -46,6 +65,16 @@ def tokenize(text):
 
 
 def build_model():
+    """ Building model with pipeline
+    Function to build a model, create pipeline, use of gridsearchcv
+
+    Args: 
+        N/A
+
+    Return: 
+        Returns the model
+
+    """
     pipeline = Pipeline([
         ('vect', CountVectorizer(tokenizer=tokenize)),
         ('tfidf', TfidfTransformer()),
@@ -62,6 +91,15 @@ def build_model():
 
 
 def evaluate_model(model, X_test, Y_test, category_names):
+    """ Evaluating model accuracy
+    Function to evaluate a model and return the classification report and accurancy score.
+    
+    Args: 
+        Model, X_test, y_test, Catgegory_names
+    
+    Retruns: 
+        Prints the Classification report & Accuracy Score
+    """
     y_pred = model.predict(X_test)
     print(classification_report(y_pred, Y_test.values, target_names=category_names))
     # print raw accuracy score 
@@ -70,11 +108,29 @@ def evaluate_model(model, X_test, Y_test, category_names):
 
 
 def save_model(model, model_filepath):
+    """ Save model in a pickle file
+    This Function helps to save the model ub pickle file
+
+    Args: 
+        model and file path to save model
+
+    Returns: 
+        save the model as pickle file in the give filepath 
+
+    """
     pickle.dump(model, open(model_filepath, 'wb'))
     pass
 
 
 def main():
+    """
+        This function runs the main function which call all other function
+            Load_data()
+            tokenize()
+            build_model()
+            evaluate_model()
+            save_model()
+    """
     if len(sys.argv) == 3:
         database_filepath, model_filepath = sys.argv[1:]
         print('Loading data...\n    DATABASE: {}'.format(database_filepath))
