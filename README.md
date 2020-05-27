@@ -1,10 +1,17 @@
 # Disaster Response Pipeline Project
 
+## Table of Contents
+1. [Introduction](#Introduction)
+2. [Project Components](#Project)
+3. [Instruction](#Instruction)
+4. [Acknowledgement](#acknowledgement)
+
+<a name = "Introduction"></a>
 ### Introduction:
 This project is the part of Udacity nanodegree programm.In the Project, you'll find a data set containing real messages that were sent during disaster events. We are creating a machine learning pipeline to categorize these events so that you can send the messages to an appropriate disaster relief agency.
 
-Your project will include a web app where an emergency worker can input a new message and get classification results in several categories. The web app will also display visualizations of the data. The dataset provided by figure8.
-
+<a name = "Project"></a>
+Your project will include a web app where an emergency worker can input a new message and get classification results in several categories. The web app will also display visualizations of the data. The dataset provided by figure8.<
 ### Project Components:
 Three key component of the project
 
@@ -27,6 +34,7 @@ In a Python Script, train_classifier.py
 3. Flask Web app
 * Web app to show models result in real time
 
+<a name = "Instructions"></a>
 ### Instructions:
 1. Run the following commands in the project's root directory to set up your database and model.
 
@@ -41,10 +49,11 @@ In a Python Script, train_classifier.py
 3. Go to http://0.0.0.0:3001/
 
 4. After this open another terminal and type env|grep WORK this will give you the spaceid it will start with view*** and some characters    after that
-5. Now open your browser window and type https://viewa7a4999b-3001.udacity-student-workspaces.com, replace the whole viewa7a4999b with your space id you got in the step 2
+5. Now open your browser window and type `http://WORKSPACESPACEID-3001.WORKSPACEDOMAIN`  replace the whole workspaceid with your space id and workspace domain to `udacity-student-workspaces.com` you got in the step 4
 6. Press enter and the app should now run for you
-`http://view6914b2f4-3001.udacity-student-workspaces.com` `http://WORKSPACESPACEID-3001.WORKSPACEDOMAIN` 
-
+    `http://view6914b2f4-3001.udacity-student-workspaces.com` `http://WORKSPACESPACEID-3001.WORKSPACEDOMAIN` 
+    
+<a name = "Acknowledgements"></a>
 ### Acknowledgements
 * [Udacity](https://www.udacity.com/) for this nanodegree assignment
 * [Figure Eight](https://www.figure-eight.com/) for providing the datasets for this project
